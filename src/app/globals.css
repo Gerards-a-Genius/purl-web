@@ -1,26 +1,276 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* ====================================
+   PURL DESIGN SYSTEM
+   Migrated from React Native theme
+   ==================================== */
 
 @theme inline {
+  /* Shadcn semantic colors (mapped to Purl tokens) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Purl brand colors */
+  --color-warm-white: var(--warm-white);
+  --color-chestnut: var(--chestnut);
+  --color-copper: var(--copper);
+  --color-copper-dark: var(--copper-dark);
+  --color-copper-light: var(--copper-light);
+  --color-copper-surface: var(--copper-surface);
+  --color-caramel: var(--caramel);
+  --color-caramel-light: var(--caramel-light);
+  --color-caramel-medium: var(--caramel-medium);
+  --color-caramel-surface: var(--caramel-surface);
+  --color-olive: var(--olive);
+  --color-olive-light: var(--olive-light);
+  --color-olive-surface: var(--olive-surface);
+  --color-chestnut-muted: var(--chestnut-muted);
+  --color-chestnut-light: var(--chestnut-light);
+  --color-text-secondary: var(--text-secondary);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-error: var(--error);
+  --color-error-light: var(--error-light);
+
+  /* Font configuration */
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Border radius (Purl scale) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* Sidebar (keep Shadcn defaults) */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  /* Charts */
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ====== PURL BRAND COLORS ====== */
+  /* Primary palette */
+  --warm-white: #FBF7E8;
+  --chestnut: #480903;
+  --copper: #B64B12;
+  --copper-dark: #9A3F0F;
+  --copper-light: #FDEEE6;
+  --copper-surface: #FFF5EE;
+
+  /* Secondary palette */
+  --caramel: #CE793A;
+  --caramel-light: #F2E6D8;
+  --caramel-medium: #E8D5C4;
+  --caramel-surface: #FFF8F2;
+
+  /* Accent palette */
+  --olive: #937A24;
+  --olive-light: #F0EBD6;
+  --olive-surface: #F6F0E0;
+
+  /* Neutral palette */
+  --surface-card: #FFFFFF;
+  --text-secondary: #8C6B5D;
+  --chestnut-muted: #7A4E48;
+  --chestnut-light: #9C7C78;
+
+  /* Semantic colors */
+  --error: #D32F2F;
+  --error-light: #FDEAEA;
+  --success: #388E3C;
+  --success-light: #E8F5E9;
+  --warning: #F57C00;
+  --warning-light: #FFF3E0;
+
+  /* Alpha variants */
+  --chestnut-alpha-5: rgba(72, 9, 3, 0.05);
+  --chestnut-alpha-10: rgba(72, 9, 3, 0.1);
+  --chestnut-alpha-20: rgba(72, 9, 3, 0.2);
+  --copper-alpha-10: rgba(182, 75, 18, 0.1);
+  --copper-alpha-20: rgba(182, 75, 18, 0.2);
+  --olive-alpha-10: rgba(147, 122, 36, 0.1);
+  --warm-white-alpha-80: rgba(251, 247, 232, 0.8);
+
+  /* Overlay colors */
+  --backdrop: rgba(0, 0, 0, 0.5);
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+
+  /* ====== SHADCN SEMANTIC MAPPINGS ====== */
+  /* Map Purl colors to Shadcn semantic tokens */
+  --radius: 12px;
+  --background: #FBF7E8;           /* warm-white */
+  --foreground: #480903;           /* chestnut */
+  --card: #FFFFFF;                 /* white cards on warm bg */
+  --card-foreground: #480903;      /* chestnut */
+  --popover: #FFFFFF;
+  --popover-foreground: #480903;
+  --primary: #B64B12;              /* copper */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2E6D8;            /* caramel-light */
+  --secondary-foreground: #480903;
+  --muted: #F6F0E0;                /* olive-surface */
+  --muted-foreground: #8C6B5D;     /* text-secondary */
+  --accent: #CE793A;               /* caramel */
+  --accent-foreground: #FFFFFF;
+  --destructive: #D32F2F;          /* error */
+  --border: #E8D5C4;               /* caramel-medium */
+  --input: #E8D5C4;
+  --ring: #B64B12;                 /* copper */
+
+  /* Charts (Purl themed) */
+  --chart-1: #B64B12;              /* copper */
+  --chart-2: #937A24;              /* olive */
+  --chart-3: #CE793A;              /* caramel */
+  --chart-4: #7A4E48;              /* chestnut-muted */
+  --chart-5: #480903;              /* chestnut */
+
+  /* Sidebar */
+  --sidebar: #FBF7E8;
+  --sidebar-foreground: #480903;
+  --sidebar-primary: #B64B12;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F2E6D8;
+  --sidebar-accent-foreground: #480903;
+  --sidebar-border: #E8D5C4;
+  --sidebar-ring: #B64B12;
+}
+
+/* Dark mode (optional - Purl is primarily light themed) */
+.dark {
+  --background: #1a0a08;
+  --foreground: #FBF7E8;
+  --card: #2a1410;
+  --card-foreground: #FBF7E8;
+  --popover: #2a1410;
+  --popover-foreground: #FBF7E8;
+  --primary: #CE793A;
+  --primary-foreground: #1a0a08;
+  --secondary: #3a2420;
+  --secondary-foreground: #FBF7E8;
+  --muted: #3a2420;
+  --muted-foreground: #9C7C78;
+  --accent: #B64B12;
+  --accent-foreground: #FBF7E8;
+  --destructive: #ef5350;
+  --border: rgba(251, 247, 232, 0.1);
+  --input: rgba(251, 247, 232, 0.15);
+  --ring: #CE793A;
+  --sidebar: #2a1410;
+  --sidebar-foreground: #FBF7E8;
+  --sidebar-primary: #CE793A;
+  --sidebar-primary-foreground: #1a0a08;
+  --sidebar-accent: #3a2420;
+  --sidebar-accent-foreground: #FBF7E8;
+  --sidebar-border: rgba(251, 247, 232, 0.1);
+  --sidebar-ring: #CE793A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ====== TYPOGRAPHY CLASSES ====== */
+/* Matching React Native typography scale */
+.text-h1 {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+  font-weight: 800;
 }
+
+.text-h2 {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+  font-weight: 700;
+}
+
+.text-h3 {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.text-body-small {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.text-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.text-caption {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+/* ====== SPACING UTILITIES ====== */
+/* Custom spacing scale matching React Native */
+.space-xs { --spacing: 4px; }
+.space-sm { --spacing: 8px; }
+.space-md { --spacing: 16px; }
+.space-lg { --spacing: 24px; }
+.space-xl { --spacing: 32px; }
+.space-xxl { --spacing: 48px; }

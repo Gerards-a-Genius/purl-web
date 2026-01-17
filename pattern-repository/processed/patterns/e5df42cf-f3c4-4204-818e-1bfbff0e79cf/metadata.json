@@ -1,0 +1,206 @@
+{
+  "id": "e5df42cf-f3c4-4204-818e-1bfbff0e79cf",
+  "source": "knitting_llms",
+  "source_id": "pattern_gpt_j_6B_Nothing_will_come_of",
+  "title": "Knitting Pattern Generated from EleutherAI/gpt-j-6B",
+  "type": "knitting",
+  "category": "swatch",
+  "difficulty": {
+    "level": "beginner",
+    "score": 0.2
+  },
+  "techniques": [
+    {
+      "name": "colorwork",
+      "complexity": 0.4,
+      "description": "Stranded colorwork"
+    },
+    {
+      "name": "stockinette",
+      "complexity": 0.1,
+      "description": "Basic stockinette stitch"
+    }
+  ],
+  "materials": {
+    "yarn_weight": "worsted",
+    "fiber_content": [
+      "acrylic",
+      "wool"
+    ],
+    "yardage": 50,
+    "needle_size": "US 7 / 4.5mm",
+    "needle_size_mm": 4.5,
+    "notions": [
+      "tapestry needle",
+      "stitch markers"
+    ],
+    "colors": [
+      {
+        "name": "Light Orange",
+        "hex": "#FFF3E0"
+      },
+      {
+        "name": "Medium Orange",
+        "hex": "#FFB74D"
+      },
+      {
+        "name": "Dark Orange",
+        "hex": "#EF6C00"
+      }
+    ]
+  },
+  "gauge": {
+    "stitches_per_inch": 5,
+    "stitches_per_10cm": 20,
+    "rows_per_inch": 7,
+    "rows_per_10cm": 28,
+    "swatch_size": "4x4 inches",
+    "pattern_used": "stockinette",
+    "raw_gauge": ""
+  },
+  "sizing": {
+    "available_sizes": [
+      "one size"
+    ],
+    "size_range": "20x20 stitches"
+  },
+  "instructions": {
+    "format": "written",
+    "sections": [
+      "setup",
+      "body"
+    ],
+    "stitch_count": 20,
+    "row_count": 20,
+    "abbreviations_used": [
+      "k",
+      "p"
+    ],
+    "rows": [
+      {
+        "row": 1,
+        "instruction": "Work right to left as follows: Color 2 (Medium Orange) for 3 stitches | Color 1 (Light Orange) for 17 stitches"
+      },
+      {
+        "row": 2,
+        "instruction": "Work left to right as follows: Color 1 (Light Orange) for 17 stitches | Color 2 (Medium Orange) for 3 stitches"
+      },
+      {
+        "row": 3,
+        "instruction": "Work right to left as follows: Color 2 (Medium Orange) for 4 stitches | Color 1 (Light Orange) for 16 stitches"
+      },
+      {
+        "row": 4,
+        "instruction": "Work left to right as follows: Color 1 (Light Orange) for 16 stitches | Color 2 (Medium Orange) for 2 stitches | Color 3 (Dark Orange) for 2 stitches"
+      },
+      {
+        "row": 5,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 2 stitches | Color 2 (Medium Orange) for 2 stitches | Color 1 (Light Orange) for 16 stitches"
+      },
+      {
+        "row": 6,
+        "instruction": "Work left to right as follows: Color 1 (Light Orange) for 16 stitches | Color 2 (Medium Orange) for 4 stitches"
+      },
+      {
+        "row": 7,
+        "instruction": "Work right to left as follows: Color 2 (Medium Orange) for 4 stitches | Color 1 (Light Orange) for 16 stitches"
+      },
+      {
+        "row": 8,
+        "instruction": "Work left to right as follows: Color 1 (Light Orange) for 16 stitches | Color 2 (Medium Orange) for 2 stitches | Color 3 (Dark Orange) for 2 stitches"
+      },
+      {
+        "row": 9,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 2 stitches | Color 2 (Medium Orange) for 3 stitches | Color 1 (Light Orange) for 2 stitches | Color 2 (Medium Orange) for 13 stitches"
+      },
+      {
+        "row": 10,
+        "instruction": "Work left to right as follows: Color 2 (Medium Orange) for 7 stitches | Color 3 (Dark Orange) for 4 stitches | Color 2 (Medium Orange) for 6 stitches | Color 3 (Dark Orange) for 3 stitches"
+      },
+      {
+        "row": 11,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 3 stitches | Color 2 (Medium Orange) for 5 stitches | Color 3 (Dark Orange) for 12 stitches"
+      },
+      {
+        "row": 12,
+        "instruction": "Work left to right as follows: Color 3 (Dark Orange) for 12 stitches | Color 2 (Medium Orange) for 5 stitches | Color 3 (Dark Orange) for 3 stitches"
+      },
+      {
+        "row": 13,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 3 stitches | Color 2 (Medium Orange) for 6 stitches | Color 3 (Dark Orange) for 11 stitches"
+      },
+      {
+        "row": 14,
+        "instruction": "Work left to right as follows: Color 3 (Dark Orange) for 11 stitches | Color 2 (Medium Orange) for 6 stitches | Color 3 (Dark Orange) for 3 stitches"
+      },
+      {
+        "row": 15,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 3 stitches | Color 2 (Medium Orange) for 7 stitches | Color 3 (Dark Orange) for 10 stitches"
+      },
+      {
+        "row": 16,
+        "instruction": "Work left to right as follows: Color 3 (Dark Orange) for 9 stitches | Color 2 (Medium Orange) for 8 stitches | Color 3 (Dark Orange) for 3 stitches"
+      },
+      {
+        "row": 17,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 3 stitches | Color 2 (Medium Orange) for 9 stitches | Color 3 (Dark Orange) for 8 stitches"
+      },
+      {
+        "row": 18,
+        "instruction": "Work left to right as follows: Color 3 (Dark Orange) for 6 stitches | Color 2 (Medium Orange) for 11 stitches | Color 3 (Dark Orange) for 3 stitches"
+      },
+      {
+        "row": 19,
+        "instruction": "Work right to left as follows: Color 3 (Dark Orange) for 3 stitches | Color 2 (Medium Orange) for 11 stitches | Color 3 (Dark Orange) for 6 stitches"
+      },
+      {
+        "row": 20,
+        "instruction": "Work left to right as follows: Color 3 (Dark Orange) for 6 stitches | Color 2 (Medium Orange) for 11 stitches | Color 3 (Dark Orange) for 3 stitches"
+      }
+    ],
+    "notes": [
+      "Pattern is worked flat (back and forth)",
+      "Odd-numbered rows (right side): Work from right to left",
+      "Even-numbered rows (wrong side): Work from left to right",
+      "The pattern is worked in stockinette stitch unless otherwise specified",
+      "Carry unused colors loosely along the back of work",
+      "Check gauge and adjust needle size accordingly",
+      "For best results, always work a gauge swatch before starting"
+    ],
+    "tips": [
+      "Use stitch markers between color changes to help track your progress",
+      "Weave in ends as you go to minimize finishing work",
+      "Block your finished piece to even out the stitches",
+      "Take a picture of each row as you complete it to track your progress",
+      "Consider using bobbins for each color to prevent tangling",
+      "Remember that even-numbered rows are worked from left to right (wrong side)"
+    ]
+  },
+  "images": {
+    "preview": "preview.png",
+    "chart": null,
+    "swatches": []
+  },
+  "embeddings": {
+    "text_model": null,
+    "image_model": null,
+    "text_vector_path": null,
+    "image_vector_path": null
+  },
+  "license": "mit",
+  "attribution": "Generated by EleutherAI/gpt-j-6B via knitting-llms project",
+  "date_added": "2026-01-16",
+  "date_original": "2024",
+  "tags": [
+    "colorwork",
+    "generated",
+    "swatch",
+    "beginner",
+    "llm-generated"
+  ],
+  "generation_metadata": {
+    "model": "EleutherAI/gpt-j-6B",
+    "prompt": "Nothing will come of nothing"
+  },
+  "notes": "Pattern generated from LLM activation patterns. Prompt: Nothing will come of nothing..."
+}

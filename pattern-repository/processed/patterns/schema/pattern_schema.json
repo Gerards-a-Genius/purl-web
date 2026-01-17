@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pattern-repository/schemas/pattern.json",
+  "title": "Knitting/Crochet Pattern",
+  "description": "Standardized schema for knitting and crochet patterns",
+  "type": "object",
+  "required": ["id", "source", "title", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the pattern"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["csail", "yarn_master", "neural_inverse", "vintage", "fossasia", "ravelry", "custom"],
+      "description": "Original data source"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Original identifier from the source"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Pattern title/name"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["knitting", "crochet", "machine_knit", "mixed"],
+      "description": "Primary craft type"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "sweater", "cardigan", "vest", "hat", "scarf", "shawl",
+        "mittens", "gloves", "socks", "blanket", "afghan",
+        "baby", "toy", "accessory", "home_decor", "other"
+      ],
+      "description": "Item category"
+    },
+    "difficulty": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["beginner", "easy", "intermediate", "advanced", "expert"]
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Normalized difficulty score (0=easiest, 1=hardest)"
+        }
+      }
+    },
+    "techniques": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Technique name (e.g., 'cable', 'lace', 'colorwork')"
+          },
+          "complexity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "List of techniques used in the pattern"
+    },
+    "materials": {
+      "type": "object",
+      "properties": {
+        "yarn_weight": {
+          "type": "string",
+          "enum": ["lace", "fingering", "sport", "dk", "worsted", "aran", "bulky", "super_bulky"],
+          "description": "Standard yarn weight category"
+        },
+        "fiber_content": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Fiber types (e.g., ['wool', 'nylon'])"
+        },
+        "yardage": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total yardage required"
+        },
+        "yardage_meters": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total meters required"
+        },
+        "needle_size": {
+          "type": "string",
+          "description": "Needle size (e.g., 'US 7 / 4.5mm')"
+        },
+        "needle_size_mm": {
+          "type": "number",
+          "description": "Needle size in millimeters"
+        },
+        "hook_size": {
+          "type": "string",
+          "description": "Crochet hook size (for crochet patterns)"
+        },
+        "hook_size_mm": {
+          "type": "number",
+          "description": "Hook size in millimeters"
+        },
+        "notions": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Additional supplies needed"
+        }
+      }
+    },
+    "gauge": {
+      "type": "object",
+      "properties": {
+        "stitches_per_inch": {
+          "type": "number"
+        },
+        "stitches_per_10cm": {
+          "type": "number"
+        },
+        "rows_per_inch": {
+          "type": "number"
+        },
+        "rows_per_10cm": {
+          "type": "number"
+        },
+        "swatch_size": {
+          "type": "string",
+          "description": "Recommended swatch size"
+        },
+        "pattern_used": {
+          "type": "string",
+          "description": "Stitch pattern for gauge (e.g., 'stockinette')"
+        }
+      }
+    },
+    "sizing": {
+      "type": "object",
+      "properties": {
+        "available_sizes": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "size_range": {
+          "type": "string",
+          "description": "Size range description"
+        },
+        "measurements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "inches": {"type": "number"},
+              "cm": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "instructions": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["written", "charted", "both", "knitout", "machine"],
+          "description": "Instruction format"
+        },
+        "sections": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Pattern sections (e.g., ['cast_on', 'body', 'sleeves', 'finishing'])"
+        },
+        "stitch_count": {
+          "type": "integer",
+          "description": "Total stitches in pattern"
+        },
+        "row_count": {
+          "type": "integer",
+          "description": "Total rows in pattern"
+        },
+        "abbreviations_used": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Knitting abbreviations used"
+        },
+        "text_content": {
+          "type": "string",
+          "description": "Full pattern instructions text"
+        },
+        "structured_instructions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "section": {"type": "string"},
+              "steps": {
+                "type": "array",
+                "items": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "properties": {
+        "preview": {
+          "type": "string",
+          "description": "Path to main preview image"
+        },
+        "chart": {
+          "type": "string",
+          "description": "Path to stitch chart image"
+        },
+        "swatches": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Paths to swatch images"
+        },
+        "construction": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Paths to construction/schematic images"
+        }
+      }
+    },
+    "embeddings": {
+      "type": "object",
+      "properties": {
+        "text_model": {
+          "type": "string",
+          "description": "Model used for text embeddings"
+        },
+        "image_model": {
+          "type": "string",
+          "description": "Model used for image embeddings"
+        },
+        "text_vector_path": {
+          "type": "string",
+          "description": "Path to text embedding file"
+        },
+        "image_vector_path": {
+          "type": "string",
+          "description": "Path to image embedding file"
+        },
+        "text_vector_dim": {
+          "type": "integer",
+          "description": "Dimension of text embedding"
+        },
+        "image_vector_dim": {
+          "type": "integer",
+          "description": "Dimension of image embedding"
+        }
+      }
+    },
+    "license": {
+      "type": "string",
+      "enum": ["public_domain", "mit", "apache2", "cc0", "cc-by", "cc-by-sa", "cc-by-nc", "unknown"],
+      "description": "License type"
+    },
+    "attribution": {
+      "type": "string",
+      "description": "Original designer or source attribution"
+    },
+    "date_added": {
+      "type": "string",
+      "format": "date",
+      "description": "Date added to repository"
+    },
+    "date_original": {
+      "type": "string",
+      "description": "Original publication date (if known)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Additional searchable tags"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the pattern"
+    }
+  }
+}

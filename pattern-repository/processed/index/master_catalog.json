@@ -1,0 +1,198 @@
+{
+  "updated": "2026-01-16T10:48:53.484354",
+  "total_patterns": 21,
+  "sources": {
+    "knitting_llms": 21
+  },
+  "patterns": [
+    {
+      "id": "95d716d5-c467-4562-a5d8-f8adcaa7485e",
+      "title": "Knitting Pattern Generated from tiiuae/falcon-7b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/95d716d5-c467-4562-a5d8-f8adcaa7485e"
+    },
+    {
+      "id": "81779816-25b8-4577-b089-58041fd59aa7",
+      "title": "Knitting Pattern Generated from bert-base-uncased",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "intermediate",
+      "path": "patterns/81779816-25b8-4577-b089-58041fd59aa7"
+    },
+    {
+      "id": "e121d059-eded-4039-adc6-dac776c6aa92",
+      "title": "Knitting Pattern Generated from meta-llama/Llama-2-13b-hf",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/e121d059-eded-4039-adc6-dac776c6aa92"
+    },
+    {
+      "id": "e5df42cf-f3c4-4204-818e-1bfbff0e79cf",
+      "title": "Knitting Pattern Generated from EleutherAI/gpt-j-6B",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/e5df42cf-f3c4-4204-818e-1bfbff0e79cf"
+    },
+    {
+      "id": "6df77318-f503-4d00-b439-d242c50ac5cd",
+      "title": "Knitting Pattern Generated from EleutherAI/gpt-j-6B",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/6df77318-f503-4d00-b439-d242c50ac5cd"
+    },
+    {
+      "id": "ab6ec5fd-5d40-4b48-9681-cb8cdb683283",
+      "title": "Knitting Pattern Generated from meta-llama/Llama-2-13b-hf",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/ab6ec5fd-5d40-4b48-9681-cb8cdb683283"
+    },
+    {
+      "id": "adf72d4d-56dc-48e3-897d-e34fa99ae78f",
+      "title": "Knitting Pattern Generated from bert-base-uncased",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/adf72d4d-56dc-48e3-897d-e34fa99ae78f"
+    },
+    {
+      "id": "471ca516-2e37-4025-9b3f-a5e24cdf4c76",
+      "title": "Knitting Pattern Generated from tiiuae/falcon-7b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/471ca516-2e37-4025-9b3f-a5e24cdf4c76"
+    },
+    {
+      "id": "8983df4e-75d3-497f-93d2-d2be6513c938",
+      "title": "Knitting Pattern Generated from google-t5/t5-11b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/8983df4e-75d3-497f-93d2-d2be6513c938"
+    },
+    {
+      "id": "292dba88-3765-4f1c-b4ac-38cdaf3ed46b",
+      "title": "Knitting Pattern Generated from gpt2-xl",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/292dba88-3765-4f1c-b4ac-38cdaf3ed46b"
+    },
+    {
+      "id": "180d4a35-a311-40b0-99b2-a670d99eb57b",
+      "title": "Knitting Pattern Generated from gpt2-xl",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/180d4a35-a311-40b0-99b2-a670d99eb57b"
+    },
+    {
+      "id": "49431ae4-ea7d-4ca9-be4c-ee1ff5131187",
+      "title": "Knitting Pattern Generated from bigscience/bloom-7b1",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/49431ae4-ea7d-4ca9-be4c-ee1ff5131187"
+    },
+    {
+      "id": "d169b1a5-1044-4b9f-b0f9-51000540c284",
+      "title": "Knitting Pattern Generated from google-t5/t5-11b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "intermediate",
+      "path": "patterns/d169b1a5-1044-4b9f-b0f9-51000540c284"
+    },
+    {
+      "id": "df73ed7d-a68a-492f-89c1-328d873865c6",
+      "title": "Knitting Pattern Generated from bigscience/bloom-7b1",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/df73ed7d-a68a-492f-89c1-328d873865c6"
+    },
+    {
+      "id": "3d0a7d4f-8d5c-418a-8089-c98a53da117f",
+      "title": "Knitting Pattern Generated from gpt2-xl",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/3d0a7d4f-8d5c-418a-8089-c98a53da117f"
+    },
+    {
+      "id": "856ba4bc-82d4-49a5-a98f-f3414216f67a",
+      "title": "Knitting Pattern Generated from bigscience/bloom-7b1",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/856ba4bc-82d4-49a5-a98f-f3414216f67a"
+    },
+    {
+      "id": "2e71d76e-ac21-41d4-b574-af5ee84e98d0",
+      "title": "Knitting Pattern Generated from google-t5/t5-11b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "intermediate",
+      "path": "patterns/2e71d76e-ac21-41d4-b574-af5ee84e98d0"
+    },
+    {
+      "id": "12ad8193-8510-4dfb-aa00-fe8111608a96",
+      "title": "Knitting Pattern Generated from tiiuae/falcon-7b",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/12ad8193-8510-4dfb-aa00-fe8111608a96"
+    },
+    {
+      "id": "395a65b5-785b-443e-a4aa-9178b085b505",
+      "title": "Knitting Pattern Generated from bert-base-uncased",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/395a65b5-785b-443e-a4aa-9178b085b505"
+    },
+    {
+      "id": "441deff8-950e-44a9-85e7-0513995d53b9",
+      "title": "Knitting Pattern Generated from EleutherAI/gpt-j-6B",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/441deff8-950e-44a9-85e7-0513995d53b9"
+    },
+    {
+      "id": "3f55d702-7d88-47ac-9993-4287d437216f",
+      "title": "Knitting Pattern Generated from meta-llama/Llama-2-13b-hf",
+      "source": "knitting_llms",
+      "type": "knitting",
+      "category": "swatch",
+      "difficulty": "beginner",
+      "path": "patterns/3f55d702-7d88-47ac-9993-4287d437216f"
+    }
+  ]
+}

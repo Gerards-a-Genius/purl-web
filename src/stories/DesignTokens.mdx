@@ -1,0 +1,210 @@
+{/* src/stories/DesignTokens.mdx */}
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens" />
+
+# Design Tokens
+
+Our design system is built on a consistent set of tokens that ensure visual harmony across the application.
+
+---
+
+## Color Palette
+
+### Primary Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+  <ColorSwatch color="#FBF7E8" name="Warm White" cssVar="--warm-white" usage="Main background" />
+  <ColorSwatch color="#480903" name="Chestnut" cssVar="--chestnut" usage="Primary text" light />
+  <ColorSwatch color="#B64B12" name="Copper" cssVar="--copper" usage="CTAs, buttons" light />
+  <ColorSwatch color="#9A3F0F" name="Copper Dark" cssVar="--copper-dark" usage="Pressed states" light />
+  <ColorSwatch color="#FDEEE6" name="Copper Light" cssVar="--copper-light" usage="Light backgrounds" />
+</div>
+
+### Secondary Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+  <ColorSwatch color="#CE793A" name="Caramel" cssVar="--caramel" usage="Secondary accent" light />
+  <ColorSwatch color="#F2E6D8" name="Caramel Light" cssVar="--caramel-light" usage="Card backgrounds" />
+  <ColorSwatch color="#E8D5C4" name="Caramel Medium" cssVar="--caramel-medium" usage="Hover states" />
+  <ColorSwatch color="#FFF8F2" name="Caramel Surface" cssVar="--caramel-surface" usage="Light cards" />
+</div>
+
+### Accent Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+  <ColorSwatch color="#937A24" name="Olive" cssVar="--olive" usage="Progress bars" />
+  <ColorSwatch color="#F0EBD6" name="Olive Light" cssVar="--olive-light" usage="Status backgrounds" />
+  <ColorSwatch color="#F6F0E0" name="Olive Surface" cssVar="--olive-surface" usage="Muted backgrounds" />
+</div>
+
+### Semantic Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+  <ColorSwatch color="#D32F2F" name="Error" cssVar="--error" usage="Error states" light />
+  <ColorSwatch color="#388E3C" name="Success" cssVar="--success" usage="Success states" light />
+  <ColorSwatch color="#F57C00" name="Warning" cssVar="--warning" usage="Warning states" light />
+</div>
+
+### Neutral Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '16px', marginBottom: '32px' }}>
+  <ColorSwatch color="#FFFFFF" name="Surface Card" cssVar="--surface-card" usage="White cards" />
+  <ColorSwatch color="#8C6B5D" name="Text Secondary" cssVar="--text-secondary" usage="Muted text" light />
+  <ColorSwatch color="#7A4E48" name="Chestnut Muted" cssVar="--chestnut-muted" usage="Secondary text" light />
+  <ColorSwatch color="#9C7C78" name="Chestnut Light" cssVar="--chestnut-light" usage="Tertiary text" light />
+</div>
+
+---
+
+## Typography Scale
+
+### Headings
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+  <TypographySample variant="h1" text="Heading 1" details="28px / 800 / -0.5px tracking" />
+  <TypographySample variant="h2" text="Heading 2" details="22px / 700 / -0.3px tracking" />
+  <TypographySample variant="h3" text="Heading 3" details="18px / 700" />
+</div>
+
+### Body Text
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+  <TypographySample variant="body" text="Body text for main content" details="16px / 500" />
+  <TypographySample variant="body-small" text="Body small for secondary content" details="14px / 500" />
+</div>
+
+### Labels & Captions
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+  <TypographySample variant="label" text="LABEL TEXT" details="12px / 700 / uppercase / 0.5px tracking" />
+  <TypographySample variant="caption" text="Caption text for help and hints" details="11px / 500" />
+</div>
+
+---
+
+## Spacing Scale
+
+Our spacing system uses a consistent scale based on 4px increments:
+
+| Name | Value | CSS Variable | Usage |
+|------|-------|--------------|-------|
+| **xs** | 4px | `--spacing-xs` | Tight spacing, icon gaps |
+| **sm** | 8px | `--spacing-sm` | Compact spacing |
+| **md** | 16px | `--spacing-md` | Default padding/margin |
+| **lg** | 24px | `--spacing-lg` | Section spacing |
+| **xl** | 32px | `--spacing-xl` | Large gaps |
+| **2xl** | 48px | `--spacing-2xl` | Page sections |
+
+---
+
+## Border Radius
+
+Rounded corners create a friendly, approachable feel:
+
+| Name | Value | CSS Variable | Usage |
+|------|-------|--------------|-------|
+| **sm** | 8px | `--radius-sm` | Small components |
+| **md** | 12px | `--radius-md` | Default (buttons, inputs) |
+| **lg** | 16px | `--radius-lg` | Cards |
+| **xl** | 20px | `--radius-xl` | Modals, sheets |
+| **2xl** | 24px | `--radius-2xl` | Large containers |
+| **3xl** | 32px | `--radius-3xl` | Hero sections |
+| **full** | 9999px | `--radius-full` | Pills, avatars |
+
+---
+
+## Using Tokens
+
+### In Tailwind CSS
+
+```jsx
+// Using semantic colors
+<button className="bg-primary text-primary-foreground">
+  Click me
+</button>
+
+// Using brand colors directly
+<div className="bg-copper text-white">
+  Copper background
+</div>
+
+// Using typography classes
+<h1 className="text-h1">Page Title</h1>
+<p className="text-body text-muted-foreground">Body text</p>
+```
+
+### In CSS
+
+```css
+.custom-element {
+  background: var(--copper);
+  color: var(--warm-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+}
+```
+
+---
+
+{/* Helper Components */}
+
+export function ColorSwatch({ color, name, cssVar, usage, light }) {
+  return (
+    <div style={{
+      borderRadius: '12px',
+      overflow: 'hidden',
+      border: '1px solid #E8D5C4',
+      background: 'white'
+    }}>
+      <div style={{
+        backgroundColor: color,
+        height: '80px',
+        display: 'flex',
+        alignItems: 'flex-end',
+        padding: '8px',
+      }}>
+        <span style={{
+          color: light ? 'white' : '#480903',
+          fontSize: '11px',
+          fontFamily: 'monospace',
+        }}>{color}</span>
+      </div>
+      <div style={{ padding: '12px' }}>
+        <div style={{ fontWeight: 600, fontSize: '14px', color: '#480903' }}>{name}</div>
+        <div style={{ fontSize: '12px', color: '#8C6B5D', fontFamily: 'monospace' }}>{cssVar}</div>
+        <div style={{ fontSize: '11px', color: '#9C7C78', marginTop: '4px' }}>{usage}</div>
+      </div>
+    </div>
+  );
+}
+
+export function TypographySample({ variant, text, details }) {
+  const styles = {
+    'h1': { fontSize: '28px', fontWeight: 800, letterSpacing: '-0.5px', lineHeight: '34px' },
+    'h2': { fontSize: '22px', fontWeight: 700, letterSpacing: '-0.3px', lineHeight: '28px' },
+    'h3': { fontSize: '18px', fontWeight: 700, lineHeight: '24px' },
+    'body': { fontSize: '16px', fontWeight: 500, lineHeight: '24px' },
+    'body-small': { fontSize: '14px', fontWeight: 500, lineHeight: '20px' },
+    'label': { fontSize: '12px', fontWeight: 700, letterSpacing: '0.5px', lineHeight: '16px', textTransform: 'uppercase' },
+    'caption': { fontSize: '11px', fontWeight: 500, lineHeight: '14px' },
+  };
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: '16px',
+      padding: '12px',
+      background: 'white',
+      borderRadius: '8px',
+      border: '1px solid #E8D5C4'
+    }}>
+      <span style={{ ...styles[variant], color: '#480903', fontFamily: '"Manrope", system-ui, sans-serif', minWidth: '200px' }}>
+        {text}
+      </span>
+      <span style={{ fontSize: '12px', color: '#8C6B5D', fontFamily: 'monospace' }}>
+        {details}
+      </span>
+    </div>
+  );
+}

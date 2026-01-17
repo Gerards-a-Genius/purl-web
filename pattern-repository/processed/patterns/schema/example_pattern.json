@@ -1,0 +1,103 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "source": "vintage",
+  "source_id": "vintage_1920_cable_sweater_001",
+  "title": "Classic Cable Pullover Sweater",
+  "type": "knitting",
+  "category": "sweater",
+
+  "difficulty": {
+    "level": "intermediate",
+    "score": 0.6
+  },
+
+  "techniques": [
+    {"name": "cable", "complexity": 0.7, "description": "6-stitch rope cable"},
+    {"name": "ribbing", "complexity": 0.2, "description": "2x2 rib for edges"},
+    {"name": "decreases", "complexity": 0.4, "description": "Raglan shaping"}
+  ],
+
+  "materials": {
+    "yarn_weight": "worsted",
+    "fiber_content": ["wool"],
+    "yardage": 1200,
+    "yardage_meters": 1097,
+    "needle_size": "US 7 / 4.5mm",
+    "needle_size_mm": 4.5,
+    "hook_size": null,
+    "hook_size_mm": null,
+    "notions": ["cable needle", "stitch markers", "tapestry needle"]
+  },
+
+  "gauge": {
+    "stitches_per_inch": 5,
+    "stitches_per_10cm": 20,
+    "rows_per_inch": 7,
+    "rows_per_10cm": 28,
+    "swatch_size": "4x4 inches / 10x10 cm",
+    "pattern_used": "stockinette"
+  },
+
+  "sizing": {
+    "available_sizes": ["S", "M", "L", "XL"],
+    "size_range": "Chest 36-48 inches",
+    "measurements": {
+      "S": {"chest_inches": 36, "chest_cm": 91, "length_inches": 24, "length_cm": 61},
+      "M": {"chest_inches": 40, "chest_cm": 102, "length_inches": 25, "length_cm": 64},
+      "L": {"chest_inches": 44, "chest_cm": 112, "length_inches": 26, "length_cm": 66},
+      "XL": {"chest_inches": 48, "chest_cm": 122, "length_inches": 27, "length_cm": 69}
+    }
+  },
+
+  "instructions": {
+    "format": "written",
+    "sections": ["back", "front", "sleeves", "neckband", "finishing"],
+    "stitch_count": 120,
+    "row_count": 180,
+    "abbreviations_used": ["k", "p", "c6f", "c6b", "k2tog", "ssk", "yo"],
+    "text_content": "BACK:\nCast on 90 (100, 110, 120) sts.\nRow 1 (RS): *K2, P2; rep from * to last 2 sts, K2.\nRow 2: *P2, K2; rep from * to last 2 sts, P2.\nContinue in rib for 2 inches...",
+    "structured_instructions": [
+      {
+        "section": "back",
+        "steps": [
+          "Cast on 90 (100, 110, 120) sts",
+          "Work 2x2 rib for 2 inches",
+          "Change to stockinette with cable panel",
+          "Work even until piece measures 15 inches",
+          "Begin raglan shaping"
+        ]
+      },
+      {
+        "section": "front",
+        "steps": [
+          "Work as for back until raglan measures 6 inches",
+          "Begin neck shaping",
+          "Continue raglan and neck shaping to end"
+        ]
+      }
+    ]
+  },
+
+  "images": {
+    "preview": "preview.png",
+    "chart": "cable_chart.png",
+    "swatches": ["cable_swatch.png"],
+    "construction": ["schematic.png"]
+  },
+
+  "embeddings": {
+    "text_model": "text-embedding-3-large",
+    "image_model": "clip-vit-large-patch14",
+    "text_vector_path": "embeddings/text_embed.npy",
+    "image_vector_path": "embeddings/image_embed.npy",
+    "text_vector_dim": 3072,
+    "image_vector_dim": 768
+  },
+
+  "license": "public_domain",
+  "attribution": "Vintage Pattern Collection, circa 1920",
+  "date_added": "2025-01-15",
+  "date_original": "1920",
+  "tags": ["cable", "pullover", "classic", "vintage", "wool", "raglan"],
+  "notes": "Converted from vintage pattern. Original measurements in inches, converted to metric."
+}

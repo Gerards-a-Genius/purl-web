@@ -1,0 +1,133 @@
+{/* src/stories/patterns/Introduction.mdx */}
+
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Patterns/Introduction" />
+
+# Pattern Library Components
+
+The Pattern Library is a Pinterest-style collection of knitting and crochet patterns that users can browse, filter, and use as templates for their own projects.
+
+## Design Philosophy
+
+The Pattern Library embraces **visual-first discovery** inspired by Pinterest:
+
+- **Masonry grid layout** for browsing and inspiration
+- **Hover interactions** reveal quick actions
+- **Color-coded difficulty badges** for instant skill-level recognition
+- **Technique chips** help users find patterns using specific skills
+
+## Component Hierarchy
+
+### Atoms
+- **DifficultyBadge** - Color-coded difficulty indicator (Beginner → Expert)
+
+### Molecules
+- **PatternCard** - Pinterest-style card with image, badges, and hover actions
+- **PatternCardSkeleton** - Loading placeholder for cards
+- **PatternQuickActions** - Hover actions (Favorite, Share, Use Template)
+- **PatternTechniqueList** - Technique chips with overflow handling
+- **FilterGroup** - Collapsible filter option group
+- **FilterChipList** - Active filter chips with removal
+
+### Organisms
+- **PatternLibraryGrid** - Masonry grid layout with animations
+- **PatternFiltersPanel** - Full filter sidebar/sheet
+- **PatternDetailModal** - Full pattern details dialog
+- **PatternSearchBar** - Search with debouncing and filter button
+
+## Color System
+
+Difficulty badges use a warm color progression:
+
+| Level | Color | Meaning |
+|-------|-------|---------|
+| Beginner | Green | Encouraging, approachable |
+| Easy | Olive | Still welcoming |
+| Intermediate | Caramel | Balanced challenge |
+| Advanced | Copper | Attention-grabbing |
+| Expert | Chestnut | Impressive achievement |
+
+## User Flows
+
+### 1. Inspiration Flow
+```
+Dashboard → "Discover Patterns" widget
+    → Library page (masonry grid)
+    → Hover: Quick preview
+    → Click: Pattern detail modal
+    → Save / Start Project
+```
+
+### 2. Learning Flow
+```
+Learn → Technique detail
+    → "See patterns using {technique}"
+    → Library (filtered by technique)
+    → Pattern detail with technique highlighted
+```
+
+### 3. Generation Flow
+```
+Library → Find pattern
+    → "Use as Template" button
+    → Project Wizard (pre-populated)
+    → Customize size, yarn, modifications
+    → AI generates personalized version
+```
+
+## Accessibility
+
+All components follow accessibility best practices:
+
+- **Keyboard navigation** through the grid
+- **Focus visible** on all interactive elements
+- **ARIA labels** for icon buttons
+- **Screen reader** announcements for pattern titles and difficulty
+
+## Usage Example
+
+```tsx
+import {
+  PatternLibraryGrid,
+  PatternFiltersPanel,
+  PatternSearchBar,
+  PatternDetailModal,
+} from '@/components/patterns';
+
+function PatternLibraryPage() {
+  const [patterns, setPatterns] = useState([]);
+  const [filters, setFilters] = useState({});
+  const [selectedPattern, setSelectedPattern] = useState(null);
+
+  return (
+    <div className="flex gap-6">
+      <PatternFiltersPanel
+        filters={filters}
+        onFiltersChange={setFilters}
+        mode="sidebar"
+      />
+      <div className="flex-1">
+        <PatternSearchBar
+          onSearch={(query) => setFilters({ ...filters, search: query })}
+        />
+        <PatternLibraryGrid
+          patterns={patterns}
+          onPatternClick={(id) => setSelectedPattern(findPattern(id))}
+        />
+      </div>
+      <PatternDetailModal
+        pattern={selectedPattern}
+        isOpen={!!selectedPattern}
+        onOpenChange={() => setSelectedPattern(null)}
+      />
+    </div>
+  );
+}
+```
+
+## Related Documentation
+
+- [Design Tokens](/docs/design-tokens) - Color palette and spacing
+- [Button](/docs/atoms-button) - Action button styles
+- [Card](/docs/ui-card) - Base card component

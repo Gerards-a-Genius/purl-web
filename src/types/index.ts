@@ -3,3 +3,4 @@
 
 export * from './project';
 export * from './technique';
+export * from './pattern';

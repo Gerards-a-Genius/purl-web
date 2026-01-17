@@ -33,8 +33,51 @@ export interface TextAnnotation {
   color: string;          // Hex color code
 }
 
+// Rectangle annotation
+export interface RectangleAnnotation {
+  id: string;
+  type: 'rectangle';
+  x: number;              // Top-left x coordinate
+  y: number;              // Top-left y coordinate
+  width: number;          // Rectangle width
+  height: number;         // Rectangle height
+  color: string;          // Stroke color (hex)
+  strokeWidth: number;    // Border thickness
+  filled: boolean;        // Whether to fill with semi-transparent color
+}
+
+// Circle/Ellipse annotation
+export interface CircleAnnotation {
+  id: string;
+  type: 'circle';
+  cx: number;             // Center x coordinate
+  cy: number;             // Center y coordinate
+  rx: number;             // Horizontal radius (ellipse support)
+  ry: number;             // Vertical radius (ellipse support)
+  color: string;          // Stroke color (hex)
+  strokeWidth: number;    // Border thickness
+  filled: boolean;        // Whether to fill with semi-transparent color
+}
+
+// Arrow annotation
+export interface ArrowAnnotation {
+  id: string;
+  type: 'arrow';
+  startX: number;         // Arrow tail x coordinate
+  startY: number;         // Arrow tail y coordinate
+  endX: number;           // Arrow tip x coordinate
+  endY: number;           // Arrow tip y coordinate
+  color: string;          // Arrow color (hex)
+  strokeWidth: number;    // Line thickness
+}
+
 // Union type for all annotation types
-export type PatternAnnotation = DrawPathAnnotation | TextAnnotation;
+export type PatternAnnotation =
+  | DrawPathAnnotation
+  | TextAnnotation
+  | RectangleAnnotation
+  | CircleAnnotation
+  | ArrowAnnotation;
 
 // Type guards for annotation types
 export function isPathAnnotation(annotation: PatternAnnotation): annotation is DrawPathAnnotation {
@@ -43,6 +86,25 @@ export function isPathAnnotation(annotation: PatternAnnotation): annotation is D
 
 export function isTextAnnotation(annotation: PatternAnnotation): annotation is TextAnnotation {
   return annotation.type === 'text';
+}
+
+export function isRectangleAnnotation(annotation: PatternAnnotation): annotation is RectangleAnnotation {
+  return annotation.type === 'rectangle';
+}
+
+export function isCircleAnnotation(annotation: PatternAnnotation): annotation is CircleAnnotation {
+  return annotation.type === 'circle';
+}
+
+export function isArrowAnnotation(annotation: PatternAnnotation): annotation is ArrowAnnotation {
+  return annotation.type === 'arrow';
+}
+
+// Helper type for shape annotations
+export type ShapeAnnotation = RectangleAnnotation | CircleAnnotation | ArrowAnnotation;
+
+export function isShapeAnnotation(annotation: PatternAnnotation): annotation is ShapeAnnotation {
+  return ['rectangle', 'circle', 'arrow'].includes(annotation.type);
 }
 
 // ============================================================================
@@ -181,14 +243,32 @@ export interface StepRow {
 export interface AnnotationRow {
   id: string;
   project_id: string;
-  type: 'path' | 'text';
+  type: 'path' | 'text' | 'rectangle' | 'circle' | 'arrow';
+  // Path annotation fields
   path?: string;
+  is_highlighter?: boolean;
+  // Shared fields
   color: string;
   stroke_width?: number;
-  is_highlighter?: boolean;
-  text?: string;
   x?: number;
   y?: number;
+  // Text annotation fields
+  text?: string;
   font_size?: number;
+  // Rectangle annotation fields
+  width?: number;
+  height?: number;
+  filled?: boolean;
+  // Circle annotation fields
+  cx?: number;
+  cy?: number;
+  rx?: number;
+  ry?: number;
+  // Arrow annotation fields
+  start_x?: number;
+  start_y?: number;
+  end_x?: number;
+  end_y?: number;
+  // Metadata
   created_at: string;
 }

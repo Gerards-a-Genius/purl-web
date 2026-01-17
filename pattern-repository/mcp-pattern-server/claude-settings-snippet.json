@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "pattern-repository": {
+      "command": "node",
+      "args": ["/Users/gerardmartelly/pattern-repository/mcp-pattern-server/dist/index.js"],
+      "env": {}
+    }
+  }
+}

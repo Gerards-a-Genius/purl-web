@@ -3,13 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ====================================
-   PURL DESIGN SYSTEM
-   Migrated from React Native theme
-   ==================================== */
+/* ============================================================================
+   PURL DESIGN SYSTEM - MODERNIZED
+   Based on award-winning UI/UX trends 2024-2025
+   Philosophy: "Warm Minimalism with Craft Heritage"
+   ============================================================================ */
 
 @theme inline {
-  /* Shadcn semantic colors (mapped to Purl tokens) */
+  /* ========================================================================
+     SEMANTIC COLOR MAPPINGS (Shadcn compatible)
+     ======================================================================== */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -25,11 +28,14 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Purl brand colors */
+  /* ========================================================================
+     PURL BRAND COLORS
+     ======================================================================== */
   --color-warm-white: var(--warm-white);
   --color-chestnut: var(--chestnut);
   --color-copper: var(--copper);
@@ -53,20 +59,27 @@
   --color-error: var(--error);
   --color-error-light: var(--error-light);
 
-  /* Font configuration */
-  --font-sans: var(--font-manrope), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  /* ========================================================================
+     FONT CONFIGURATION
+     ======================================================================== */
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* Border radius (Purl scale) */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
-  --radius-3xl: 32px;
-  --radius-full: 9999px;
+  /* ========================================================================
+     BORDER RADIUS - Refined scale
+     ======================================================================== */
+  --radius-none: 0;
+  --radius-sm: 0.375rem;    /* 6px - subtle */
+  --radius-md: 0.5rem;      /* 8px - default */
+  --radius-lg: 0.75rem;     /* 12px - cards */
+  --radius-xl: 1rem;        /* 16px - modals */
+  --radius-2xl: 1.25rem;    /* 20px - large cards */
+  --radius-3xl: 1.5rem;     /* 24px - hero sections */
+  --radius-full: 9999px;    /* Pills, avatars */
 
-  /* Sidebar (keep Shadcn defaults) */
+  /* ========================================================================
+     SIDEBAR (Shadcn defaults)
+     ======================================================================== */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -76,201 +89,925 @@
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
 
-  /* Charts */
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
+  /* ========================================================================
+     CHARTS
+     ======================================================================== */
   --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 }
+
+/* ============================================================================
+   ROOT VARIABLES - LIGHT MODE
+   Using OKLch for perceptually uniform colors with hex fallbacks
+   ============================================================================ */
 
 :root {
-  /* ====== PURL BRAND COLORS ====== */
-  /* Primary palette */
-  --warm-white: #FBF7E8;
-  --chestnut: #480903;
-  --copper: #B64B12;
-  --copper-dark: #9A3F0F;
-  --copper-light: #FDEEE6;
-  --copper-surface: #FFF5EE;
+  /* Color scheme hint for browser */
+  color-scheme: light;
 
-  /* Secondary palette */
-  --caramel: #CE793A;
-  --caramel-light: #F2E6D8;
-  --caramel-medium: #E8D5C4;
-  --caramel-surface: #FFF8F2;
+  /* ========================================================================
+     PURL BRAND COLORS - OKLch with hex fallbacks
+     ======================================================================== */
 
-  /* Accent palette */
-  --olive: #937A24;
-  --olive-light: #F0EBD6;
-  --olive-surface: #F6F0E0;
+  /* Primary palette - Warm copper tones */
+  --warm-white: oklch(0.973 0.015 90);           /* #FBF7E8 fallback */
+  --warm-white-hex: #FBF7E8;
+  --chestnut: oklch(0.285 0.08 25);              /* #480903 fallback */
+  --chestnut-hex: #480903;
+  --copper: oklch(0.545 0.165 40);               /* #B64B12 fallback */
+  --copper-hex: #B64B12;
+  --copper-dark: oklch(0.485 0.155 40);          /* #9A3F0F fallback */
+  --copper-dark-hex: #9A3F0F;
+  --copper-light: oklch(0.955 0.025 45);         /* #FDEEE6 fallback */
+  --copper-light-hex: #FDEEE6;
+  --copper-surface: oklch(0.970 0.018 50);       /* #FFF5EE fallback */
+  --copper-surface-hex: #FFF5EE;
+
+  /* Secondary palette - Caramel warmth */
+  --caramel: oklch(0.625 0.14 55);               /* #CE793A fallback */
+  --caramel-hex: #CE793A;
+  --caramel-light: oklch(0.935 0.025 70);        /* #F2E6D8 fallback */
+  --caramel-light-hex: #F2E6D8;
+  --caramel-medium: oklch(0.900 0.03 65);        /* #E8D5C4 fallback */
+  --caramel-medium-hex: #E8D5C4;
+  --caramel-surface: oklch(0.975 0.015 65);      /* #FFF8F2 fallback */
+  --caramel-surface-hex: #FFF8F2;
+
+  /* Accent palette - Olive/sage */
+  --olive: oklch(0.565 0.1 95);                  /* #937A24 fallback */
+  --olive-hex: #937A24;
+  --olive-light: oklch(0.940 0.03 95);           /* #F0EBD6 fallback */
+  --olive-light-hex: #F0EBD6;
+  --olive-surface: oklch(0.955 0.025 95);        /* #F6F0E0 fallback */
+  --olive-surface-hex: #F6F0E0;
 
   /* Neutral palette */
-  --surface-card: #FFFFFF;
-  --text-secondary: #8C6B5D;
-  --chestnut-muted: #7A4E48;
-  --chestnut-light: #9C7C78;
+  --surface-card: oklch(1 0 0);                  /* #FFFFFF */
+  --text-secondary: oklch(0.545 0.06 35);        /* #8C6B5D fallback */
+  --text-secondary-hex: #8C6B5D;
+  --chestnut-muted: oklch(0.445 0.065 30);       /* #7A4E48 fallback */
+  --chestnut-muted-hex: #7A4E48;
+  --chestnut-light: oklch(0.565 0.055 30);       /* #9C7C78 fallback */
+  --chestnut-light-hex: #9C7C78;
 
-  /* Semantic colors */
-  --error: #D32F2F;
-  --error-light: #FDEAEA;
-  --success: #388E3C;
-  --success-light: #E8F5E9;
-  --warning: #F57C00;
-  --warning-light: #FFF3E0;
+  /* Semantic colors - Status */
+  --error: oklch(0.545 0.2 25);                  /* #D32F2F fallback */
+  --error-hex: #D32F2F;
+  --error-light: oklch(0.955 0.025 25);          /* #FDEAEA fallback */
+  --error-light-hex: #FDEAEA;
+  --success: oklch(0.545 0.145 145);             /* #388E3C fallback */
+  --success-hex: #388E3C;
+  --success-light: oklch(0.945 0.03 145);        /* #E8F5E9 fallback */
+  --success-light-hex: #E8F5E9;
+  --warning: oklch(0.685 0.185 55);              /* #F57C00 fallback */
+  --warning-hex: #F57C00;
+  --warning-light: oklch(0.965 0.035 70);        /* #FFF3E0 fallback */
+  --warning-light-hex: #FFF3E0;
 
-  /* Alpha variants */
-  --chestnut-alpha-5: rgba(72, 9, 3, 0.05);
-  --chestnut-alpha-10: rgba(72, 9, 3, 0.1);
-  --chestnut-alpha-20: rgba(72, 9, 3, 0.2);
-  --copper-alpha-10: rgba(182, 75, 18, 0.1);
-  --copper-alpha-20: rgba(182, 75, 18, 0.2);
-  --olive-alpha-10: rgba(147, 122, 36, 0.1);
-  --warm-white-alpha-80: rgba(251, 247, 232, 0.8);
+  /* Alpha variants for overlays */
+  --chestnut-alpha-5: oklch(0.285 0.08 25 / 0.05);
+  --chestnut-alpha-10: oklch(0.285 0.08 25 / 0.1);
+  --chestnut-alpha-20: oklch(0.285 0.08 25 / 0.2);
+  --copper-alpha-10: oklch(0.545 0.165 40 / 0.1);
+  --copper-alpha-20: oklch(0.545 0.165 40 / 0.2);
+  --olive-alpha-10: oklch(0.565 0.1 95 / 0.1);
+  --warm-white-alpha-80: oklch(0.973 0.015 90 / 0.8);
 
   /* Overlay colors */
-  --backdrop: rgba(0, 0, 0, 0.5);
-  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --backdrop: oklch(0 0 0 / 0.5);
+  --overlay-dark: oklch(0 0 0 / 0.6);
 
-  /* ====== SHADCN SEMANTIC MAPPINGS ====== */
-  /* Map Purl colors to Shadcn semantic tokens */
-  --radius: 12px;
-  --background: #FBF7E8;           /* warm-white */
-  --foreground: #480903;           /* chestnut */
-  --card: #FFFFFF;                 /* white cards on warm bg */
-  --card-foreground: #480903;      /* chestnut */
-  --popover: #FFFFFF;
-  --popover-foreground: #480903;
-  --primary: #B64B12;              /* copper */
-  --primary-foreground: #FFFFFF;
-  --secondary: #F2E6D8;            /* caramel-light */
-  --secondary-foreground: #480903;
-  --muted: #F6F0E0;                /* olive-surface */
-  --muted-foreground: #8C6B5D;     /* text-secondary */
-  --accent: #CE793A;               /* caramel */
-  --accent-foreground: #FFFFFF;
-  --destructive: #D32F2F;          /* error */
-  --border: #E8D5C4;               /* caramel-medium */
-  --input: #E8D5C4;
-  --ring: #B64B12;                 /* copper */
+  /* ========================================================================
+     SHADCN SEMANTIC MAPPINGS
+     ======================================================================== */
+  --radius: 0.5rem;                              /* Default radius (8px) */
+  --background: var(--warm-white);
+  --foreground: var(--chestnut);
+  --card: var(--surface-card);
+  --card-foreground: var(--chestnut);
+  --popover: var(--surface-card);
+  --popover-foreground: var(--chestnut);
+  --primary: var(--copper);
+  --primary-foreground: oklch(1 0 0);            /* White */
+  --secondary: var(--caramel-light);
+  --secondary-foreground: var(--chestnut);
+  --muted: var(--olive-surface);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--caramel);
+  --accent-foreground: oklch(1 0 0);             /* White */
+  --destructive: var(--error);
+  --destructive-foreground: oklch(1 0 0);        /* White */
+  --border: var(--caramel-medium);
+  --input: var(--caramel-medium);
+  --ring: var(--copper);
 
-  /* Charts (Purl themed) */
-  --chart-1: #B64B12;              /* copper */
-  --chart-2: #937A24;              /* olive */
-  --chart-3: #CE793A;              /* caramel */
-  --chart-4: #7A4E48;              /* chestnut-muted */
-  --chart-5: #480903;              /* chestnut */
+  /* Charts - Purl themed */
+  --chart-1: var(--copper);
+  --chart-2: var(--olive);
+  --chart-3: var(--caramel);
+  --chart-4: var(--chestnut-muted);
+  --chart-5: var(--chestnut);
 
   /* Sidebar */
-  --sidebar: #FBF7E8;
-  --sidebar-foreground: #480903;
-  --sidebar-primary: #B64B12;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F2E6D8;
-  --sidebar-accent-foreground: #480903;
-  --sidebar-border: #E8D5C4;
-  --sidebar-ring: #B64B12;
+  --sidebar: var(--warm-white);
+  --sidebar-foreground: var(--chestnut);
+  --sidebar-primary: var(--copper);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: var(--caramel-light);
+  --sidebar-accent-foreground: var(--chestnut);
+  --sidebar-border: var(--caramel-medium);
+  --sidebar-ring: var(--copper);
+
+  /* ========================================================================
+     GRADIENTS - Modern soft gradients (2025 trend)
+     ======================================================================== */
+  --gradient-warm: linear-gradient(135deg, var(--warm-white) 0%, var(--copper-light) 100%);
+  --gradient-copper: linear-gradient(135deg, var(--copper) 0%, var(--caramel) 100%);
+  --gradient-caramel: linear-gradient(135deg, var(--caramel-light) 0%, var(--olive-light) 100%);
+  --gradient-glass: linear-gradient(135deg, oklch(1 0 0 / 0.1) 0%, oklch(1 0 0 / 0.05) 100%);
+  --gradient-hero: linear-gradient(180deg, var(--warm-white) 0%, var(--copper-surface) 100%);
+
+  /* ========================================================================
+     SHADOWS - Layered elevation system (Award trend)
+     ======================================================================== */
+  --shadow-color: 25 80% 10%;                    /* Warm brown tint */
+
+  --shadow-xs: 0 1px 2px oklch(0.285 0.08 25 / 0.05);
+  --shadow-sm:
+    0 1px 3px oklch(0.285 0.08 25 / 0.1),
+    0 1px 2px oklch(0.285 0.08 25 / 0.06);
+  --shadow-md:
+    0 4px 6px oklch(0.285 0.08 25 / 0.1),
+    0 2px 4px oklch(0.285 0.08 25 / 0.06);
+  --shadow-lg:
+    0 10px 15px oklch(0.285 0.08 25 / 0.1),
+    0 4px 6px oklch(0.285 0.08 25 / 0.05);
+  --shadow-xl:
+    0 20px 25px oklch(0.285 0.08 25 / 0.1),
+    0 8px 10px oklch(0.285 0.08 25 / 0.04);
+  --shadow-2xl: 0 25px 50px oklch(0.285 0.08 25 / 0.25);
+  --shadow-inner: inset 0 2px 4px oklch(0.285 0.08 25 / 0.06);
+  --shadow-ring: 0 0 0 3px oklch(0.545 0.165 40 / 0.3);
+
+  /* ========================================================================
+     ANIMATION TOKENS - Consistent micro-interactions
+     ======================================================================== */
+
+  /* Durations */
+  --duration-instant: 50ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  /* Easing functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ========================================================================
+     TYPOGRAPHY SCALE - Fluid with clamp() (Modern responsive)
+     ======================================================================== */
+  --text-xs: clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem);      /* 11-12px */
+  --text-sm: clamp(0.8125rem, 0.775rem + 0.15vw, 0.875rem);   /* 13-14px */
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);   /* 15-17px */
+  --text-lg: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);      /* 17-19px */
+  --text-xl: clamp(1.1875rem, 1.1rem + 0.35vw, 1.375rem);     /* 19-22px */
+  --text-2xl: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);     /* 22-26px */
+  --text-3xl: clamp(1.625rem, 1.5rem + 0.75vw, 2rem);         /* 26-32px */
+  --text-4xl: clamp(2rem, 1.75rem + 1vw, 2.5rem);             /* 32-40px */
+  --text-5xl: clamp(2.5rem, 2.1rem + 1.5vw, 3rem);            /* 40-48px */
+
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 1.75;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ========================================================================
+     SPACING SCALE - 8px grid system
+     ======================================================================== */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;    /* 2px */
+  --space-1: 0.25rem;       /* 4px */
+  --space-1-5: 0.375rem;    /* 6px */
+  --space-2: 0.5rem;        /* 8px */
+  --space-2-5: 0.625rem;    /* 10px */
+  --space-3: 0.75rem;       /* 12px */
+  --space-4: 1rem;          /* 16px */
+  --space-5: 1.25rem;       /* 20px */
+  --space-6: 1.5rem;        /* 24px */
+  --space-8: 2rem;          /* 32px */
+  --space-10: 2.5rem;       /* 40px */
+  --space-12: 3rem;         /* 48px */
+  --space-16: 4rem;         /* 64px */
+  --space-20: 5rem;         /* 80px */
+  --space-24: 6rem;         /* 96px */
 }
 
-/* Dark mode (optional - Purl is primarily light themed) */
+/* ============================================================================
+   DARK MODE VARIABLES
+   Warm dark grays (NOT pure black) - Modern best practice
+   ============================================================================ */
+
 .dark {
-  --background: #1a0a08;
-  --foreground: #FBF7E8;
-  --card: #2a1410;
-  --card-foreground: #FBF7E8;
-  --popover: #2a1410;
-  --popover-foreground: #FBF7E8;
-  --primary: #CE793A;
-  --primary-foreground: #1a0a08;
-  --secondary: #3a2420;
-  --secondary-foreground: #FBF7E8;
-  --muted: #3a2420;
-  --muted-foreground: #9C7C78;
-  --accent: #B64B12;
-  --accent-foreground: #FBF7E8;
-  --destructive: #ef5350;
-  --border: rgba(251, 247, 232, 0.1);
-  --input: rgba(251, 247, 232, 0.15);
-  --ring: #CE793A;
-  --sidebar: #2a1410;
-  --sidebar-foreground: #FBF7E8;
-  --sidebar-primary: #CE793A;
-  --sidebar-primary-foreground: #1a0a08;
-  --sidebar-accent: #3a2420;
-  --sidebar-accent-foreground: #FBF7E8;
-  --sidebar-border: rgba(251, 247, 232, 0.1);
-  --sidebar-ring: #CE793A;
+  color-scheme: dark;
+
+  /* Background hierarchy */
+  --background: oklch(0.175 0.02 35);            /* Warm dark gray */
+  --foreground: oklch(0.92 0.015 90);            /* Soft warm white */
+  --card: oklch(0.215 0.02 35);                  /* Elevated surface */
+  --card-foreground: oklch(0.92 0.015 90);
+  --popover: oklch(0.215 0.02 35);
+  --popover-foreground: oklch(0.92 0.015 90);
+
+  /* Primary shifts to caramel for better contrast */
+  --primary: var(--caramel);
+  --primary-foreground: oklch(0.175 0.02 35);
+  --secondary: oklch(0.28 0.025 35);
+  --secondary-foreground: oklch(0.92 0.015 90);
+  --muted: oklch(0.28 0.025 35);
+  --muted-foreground: oklch(0.65 0.04 35);
+  --accent: var(--copper);
+  --accent-foreground: oklch(0.92 0.015 90);
+  --destructive: oklch(0.65 0.22 25);            /* Brighter red for dark mode */
+  --destructive-foreground: oklch(0.92 0.015 90);
+
+  /* Borders and inputs - subtle */
+  --border: oklch(0.92 0.015 90 / 0.1);
+  --input: oklch(0.92 0.015 90 / 0.15);
+  --ring: var(--caramel);
+
+  /* Sidebar dark mode */
+  --sidebar: oklch(0.215 0.02 35);
+  --sidebar-foreground: oklch(0.92 0.015 90);
+  --sidebar-primary: var(--caramel);
+  --sidebar-primary-foreground: oklch(0.175 0.02 35);
+  --sidebar-accent: oklch(0.28 0.025 35);
+  --sidebar-accent-foreground: oklch(0.92 0.015 90);
+  --sidebar-border: oklch(0.92 0.015 90 / 0.1);
+  --sidebar-ring: var(--caramel);
+
+  /* Dark mode shadows - lighter, more diffuse */
+  --shadow-xs: 0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-sm:
+    0 1px 3px oklch(0 0 0 / 0.4),
+    0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-md:
+    0 4px 6px oklch(0 0 0 / 0.4),
+    0 2px 4px oklch(0 0 0 / 0.3);
+  --shadow-lg:
+    0 10px 15px oklch(0 0 0 / 0.4),
+    0 4px 6px oklch(0 0 0 / 0.2);
+  --shadow-xl:
+    0 20px 25px oklch(0 0 0 / 0.4),
+    0 8px 10px oklch(0 0 0 / 0.2);
+  --shadow-2xl: 0 25px 50px oklch(0 0 0 / 0.5);
+  --shadow-ring: 0 0 0 3px oklch(0.625 0.14 55 / 0.4);
 }
+
+/* ============================================================================
+   BASE LAYER
+   ============================================================================ */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    /* Prevent text inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: var(--leading-normal);
+  }
+
+  /* Focus visible for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background: var(--copper-alpha-20);
+    color: var(--chestnut);
+  }
+
+  .dark ::selection {
+    background: oklch(0.625 0.14 55 / 0.3);
+    color: oklch(0.92 0.015 90);
   }
 }
 
-/* ====== TYPOGRAPHY CLASSES ====== */
-/* Matching React Native typography scale */
-.text-h1 {
-  font-family: var(--font-sans);
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: -0.5px;
-  font-weight: 800;
+/* ============================================================================
+   TYPOGRAPHY UTILITIES - Modern responsive scale
+   ============================================================================ */
+
+@layer utilities {
+  /* Heading styles with fluid sizing */
+  .text-h1 {
+    font-family: var(--font-sans);
+    font-size: var(--text-4xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    font-weight: var(--font-extrabold);
+  }
+
+  .text-h2 {
+    font-family: var(--font-sans);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    font-weight: var(--font-bold);
+  }
+
+  .text-h3 {
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-bold);
+  }
+
+  .text-h4 {
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-semibold);
+  }
+
+  .text-body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    font-weight: var(--font-medium);
+  }
+
+  .text-body-sm {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    font-weight: var(--font-medium);
+  }
+
+  .text-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+  }
+
+  .text-caption {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    line-height: var(--leading-tight);
+    font-weight: var(--font-medium);
+    color: var(--muted-foreground);
+  }
+
+  /* Balanced text wrapping for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
 }
 
-.text-h2 {
-  font-family: var(--font-sans);
-  font-size: 22px;
-  line-height: 28px;
-  letter-spacing: -0.3px;
-  font-weight: 700;
+/* ============================================================================
+   GLASS MORPHISM UTILITIES - Apple "Liquid Glass" inspired
+   ============================================================================ */
+
+@layer utilities {
+  .glass {
+    background: oklch(0.973 0.015 90 / 0.7);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid oklch(0.973 0.015 90 / 0.2);
+  }
+
+  .glass-subtle {
+    background: oklch(0.973 0.015 90 / 0.5);
+    backdrop-filter: blur(8px) saturate(150%);
+    -webkit-backdrop-filter: blur(8px) saturate(150%);
+    border: 1px solid oklch(0.973 0.015 90 / 0.15);
+  }
+
+  .glass-strong {
+    background: oklch(0.973 0.015 90 / 0.85);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid oklch(0.973 0.015 90 / 0.25);
+  }
+
+  .dark .glass {
+    background: oklch(0.175 0.02 35 / 0.7);
+    border-color: oklch(0.92 0.015 90 / 0.1);
+  }
+
+  .dark .glass-subtle {
+    background: oklch(0.175 0.02 35 / 0.5);
+    border-color: oklch(0.92 0.015 90 / 0.08);
+  }
+
+  .dark .glass-strong {
+    background: oklch(0.175 0.02 35 / 0.85);
+    border-color: oklch(0.92 0.015 90 / 0.15);
+  }
 }
 
-.text-h3 {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
+/* ============================================================================
+   GRADIENT UTILITIES
+   ============================================================================ */
+
+@layer utilities {
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .bg-gradient-copper {
+    background: var(--gradient-copper);
+  }
+
+  .bg-gradient-caramel {
+    background: var(--gradient-caramel);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Gradient text */
+  .text-gradient-copper {
+    background: var(--gradient-copper);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
-.text-body {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
+/* ============================================================================
+   SHADOW UTILITIES
+   ============================================================================ */
+
+@layer utilities {
+  .shadow-elevation-1 { box-shadow: var(--shadow-xs); }
+  .shadow-elevation-2 { box-shadow: var(--shadow-sm); }
+  .shadow-elevation-3 { box-shadow: var(--shadow-md); }
+  .shadow-elevation-4 { box-shadow: var(--shadow-lg); }
+  .shadow-elevation-5 { box-shadow: var(--shadow-xl); }
+  .shadow-elevation-6 { box-shadow: var(--shadow-2xl); }
+  .shadow-focus { box-shadow: var(--shadow-ring); }
+  .shadow-inset { box-shadow: var(--shadow-inner); }
 }
 
-.text-body-small {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
+/* ============================================================================
+   ANIMATION UTILITIES
+   ============================================================================ */
+
+@layer utilities {
+  /* Transition presets */
+  .transition-fast {
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .transition-normal {
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .transition-slow {
+    transition-duration: var(--duration-slow);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .transition-spring {
+    transition-duration: var(--duration-slow);
+    transition-timing-function: var(--ease-spring);
+  }
+
+  .transition-bounce {
+    transition-duration: var(--duration-slow);
+    transition-timing-function: var(--ease-bounce);
+  }
 }
 
-.text-label {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  text-transform: uppercase;
+/* Keyframe animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.text-caption {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  line-height: 14px;
-  font-weight: 500;
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
-/* ====== SPACING UTILITIES ====== */
-/* Custom spacing scale matching React Native */
-.space-xs { --spacing: 4px; }
-.space-sm { --spacing: 8px; }
-.space-md { --spacing: 16px; }
-.space-lg { --spacing: 24px; }
-.space-xl { --spacing: 32px; }
-.space-xxl { --spacing: 48px; }
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Animation utility classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in var(--duration-normal) var(--ease-out);
+  }
+
+  .animate-fade-out {
+    animation: fade-out var(--duration-normal) var(--ease-out);
+  }
+
+  .animate-slide-up {
+    animation: slide-up var(--duration-normal) var(--ease-spring);
+  }
+
+  .animate-slide-down {
+    animation: slide-down var(--duration-normal) var(--ease-spring);
+  }
+
+  .animate-scale-in {
+    animation: scale-in var(--duration-normal) var(--ease-spring);
+  }
+
+  .animate-scale-out {
+    animation: scale-out var(--duration-fast) var(--ease-in);
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      var(--muted) 0%,
+      var(--muted-foreground) 50%,
+      var(--muted) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s var(--ease-in-out) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT - Accessibility requirement
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   SCROLLBAR STYLING - Modern minimal scrollbars
+   ============================================================================ */
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius-full);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   FOCUS RING UTILITIES - Accessible focus states
+   ============================================================================ */
+
+@layer utilities {
+  .focus-ring {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    box-shadow: var(--shadow-ring);
+  }
+
+  .focus-ring-inset:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--ring);
+  }
+}
+
+/* ============================================================================
+   SAFE AREA INSETS - Mobile PWA support
+   ============================================================================ */
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ============================================================================
+   TOUCH TARGET UTILITIES - Mobile accessibility (44x44px minimum)
+   ============================================================================ */
+
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .touch-target-sm {
+    min-height: 36px;
+    min-width: 36px;
+  }
+}
+
+/* ============================================================================
+   VIEW TRANSITIONS API - Smooth page navigation (Chrome 111+, Safari 18+)
+   ============================================================================ */
+
+/*
+ * Default crossfade animation for page transitions.
+ * The View Transitions API automatically captures before/after snapshots
+ * and animates between them.
+ */
+@layer base {
+  /* Root transition - default crossfade */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--duration-normal);
+    animation-timing-function: var(--ease-spring);
+  }
+
+  /* Old page fades out */
+  ::view-transition-old(root) {
+    animation-name: view-fade-out;
+  }
+
+  /* New page fades in with slight slide */
+  ::view-transition-new(root) {
+    animation-name: view-fade-slide-in;
+  }
+
+  @keyframes view-fade-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+  }
+
+  @keyframes view-fade-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+ * Shared element transitions - use view-transition-name to link elements
+ * across pages for morphing animations.
+ */
+@layer utilities {
+  /* Named transition groups for specific elements */
+  .view-transition-hero {
+    view-transition-name: hero;
+  }
+
+  .view-transition-card {
+    view-transition-name: card;
+  }
+
+  .view-transition-title {
+    view-transition-name: title;
+  }
+
+  .view-transition-thumbnail {
+    view-transition-name: thumbnail;
+  }
+}
+
+/* Shared element animations - morph between pages */
+@layer base {
+  ::view-transition-old(hero),
+  ::view-transition-new(hero),
+  ::view-transition-old(card),
+  ::view-transition-new(card),
+  ::view-transition-old(title),
+  ::view-transition-new(title),
+  ::view-transition-old(thumbnail),
+  ::view-transition-new(thumbnail) {
+    animation-duration: var(--duration-slow);
+    animation-timing-function: var(--ease-spring);
+  }
+
+  /* Shared elements crossfade with resize */
+  ::view-transition-old(hero),
+  ::view-transition-old(card) {
+    animation-name: view-morph-out;
+  }
+
+  ::view-transition-new(hero),
+  ::view-transition-new(card) {
+    animation-name: view-morph-in;
+  }
+
+  @keyframes view-morph-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes view-morph-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(hero),
+  ::view-transition-new(hero),
+  ::view-transition-old(card),
+  ::view-transition-new(card) {
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Pattern Repository - large data directories
+pattern-repository/raw/
+pattern-repository/embeddings/
+pattern-repository/.venv/
+pattern-repository/training/
+
+# Storybook build output
+storybook-static/
+
+# Playwright test reports
+playwright-report/
+test-results/
+
+# MCP configuration (contains local paths)
+.mcp.json
+
+# Deno lock file (Edge Functions local dev)
+deno.lock
+
+# Temporary reference folder
+KnittingAPP Functions and Features to copy over/

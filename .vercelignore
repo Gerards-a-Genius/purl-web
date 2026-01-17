@@ -1,0 +1,36 @@
+# Dependencies (will be installed during build)
+node_modules/
+
+# Pattern Repository - dev-only resources
+pattern-repository/raw/
+pattern-repository/embeddings/
+pattern-repository/.venv/
+pattern-repository/training/
+pattern-repository/mcp-pattern-server/node_modules/
+
+# Build outputs
+.next/
+storybook-static/
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
+
+# Local dev files
+.mcp.json
+deno.lock
+*.log
+
+# Reference folders (not needed for production)
+KnittingAPP Functions and Features to copy over/
+
+# Supabase local dev
+supabase/.temp/
+supabase/.branches/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
